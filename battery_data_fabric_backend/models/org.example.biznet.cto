@@ -1,0 +1,24 @@
+namespace org.example.biznet
+
+participant HashUser identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
+}
+
+asset HashInfo identified by hash_data {
+  --> HashUser owner
+  o String hash_data
+  o String upload_date_time
+}
+
+transaction HashTransaction {
+  --> HashInfo hash
+  o String newValue
+}
+
+event HashEvent {
+  --> HashInfo hash
+  o String oldValue
+  o String newValue
+}

@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/body.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.2/js/materialize.min.js"></script>
+    
+    
+    <title>Hash Store on Blockchain!</title>
+  </head>
+  <body>
+      <h3 class="center"><a class="btn-floating btn-large pulse"><i class="material-icons">cloud</i></a></h3>
+      <h3 class="center">Welcome to Hash Store!!</h3>
+      <br/>
+      <div id="welcome_icons">
+         
+          <table>
+              <thead>
+                <tr>
+                    <th>Video Hash</th>
+                    <th>Upload Time</th>
+                </tr>
+              </thead>
+      
+              <tbody>
+                  {% for arr in transactions %}
+                  <tr>
+                    <td>{{ arr['hash_data'] }}</td>
+                    <td>{{ arr['upload_date_time'] }}</td>
+                  </tr>
+                  {% endfor %}
+              </tbody>
+            </table>
+                  
+      </div>
+
+      <div class="center">
+        <h5>A web-application made with Python & MaterializeCSS.</h5>
+      </div>
+      <script>
+      setTimeout(function(){
+        window.location.reload(1);
+      }, 5000);
+      </script>
+  </body>
+</html>
